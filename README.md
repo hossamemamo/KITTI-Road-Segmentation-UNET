@@ -27,11 +27,29 @@ In this repository I'm trying to do image segmentations on KITTI Road dataset us
 
 ## Sending Requests
 
-using curl:
+using `curl`:
 
 ```shell
 curl -X POST -H "Content-Type: multipart/form-data" -F file="@my_img_file.png" "localhost:5000/upload" -o prediction_image.jpg
 ```
+
+## Cautions
+
+> follow this for consistent behavior as this software is still in early development.
+
+* your input image to the server should be a `png`.
+* the output server prediction image will be `jpg`.
+
+## Development Plan
+
+- [x] Download dataset and preprocess it.
+- [x] Built `UNET` architecture and train using PyTorch on GPU.
+- [x] Expose the model over an HTTP API.
+- [x] Build the server docker image.
+- [] Deploy the docker image to `docker hub`.
+- [] Build web front-end interface.
+- [] Host containers on a cloud provider acting as backend for the front-end user interface.
+- [] Add support for Real-Time.
 
 ## Results
 Check notebook
