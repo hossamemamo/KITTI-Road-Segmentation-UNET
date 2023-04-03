@@ -51,6 +51,9 @@ curl -X POST -H "Content-Type: multipart/form-data" -F file="@my_img_file.png" "
 - [ ] Host containers on a cloud provider acting as backend for the front-end user interface.
 - [ ] Add support for Real-Time.
 
+## Documentation Todos
+- [ ] Add documentation for running the server locally without using `Docker`.
+
 ## Results
 Check notebook
 
