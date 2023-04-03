@@ -10,4 +10,31 @@ In this repository I'm trying to do image segmentations on KITTI Road dataset us
 
 > Disclaimer: This project is still work-in-progress
 
-# Check note book for results!
+## Running Server Locally
+> You will need `Docker` installed for this to work.
+
+* Clone this repo and unzip the `best_model_state.zip` file (this contains the trained parameters).
+
+* Take the output file `best_model_state.bin` and place it inside the `www/` directory.
+
+* `cd` into the `www/` directory and run `docker build -t torch-server .`
+
+* After it finishes, run `docker run -d -p 5000:5000 torch-server`
+
+* Done! you have the model exposed over `localhost:5000`.
+
+* Send your requests containing the image in the request form data with the name `file` using (postman/insomnia/curl).
+
+## Sending Requests
+
+using curl:
+
+```shell
+curl -X POST -H "Content-Type: multipart/form-data" -F file="@my_img_file.png" "localhost:5000/upload" -o prediction_image.jpg
+```
+
+## Results
+Check notebook
+
+## License
+MIT
