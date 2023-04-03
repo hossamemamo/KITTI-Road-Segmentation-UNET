@@ -46,10 +46,10 @@ curl -X POST -H "Content-Type: multipart/form-data" -F file="@my_img_file.png" "
 - [x] Built `UNET` architecture and train using PyTorch on GPU.
 - [x] Expose the model over an HTTP API.
 - [x] Build the server docker image.
-- [] Deploy the docker image to `docker hub`.
-- [] Build web front-end interface.
-- [] Host containers on a cloud provider acting as backend for the front-end user interface.
-- [] Add support for Real-Time.
+- [ ] Deploy the docker image to `docker hub`.
+- [ ] Build web front-end interface.
+- [ ] Host containers on a cloud provider acting as backend for the front-end user interface.
+- [ ] Add support for Real-Time.
 
 ## Results
 Check notebook
