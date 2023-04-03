@@ -1,5 +1,5 @@
 <div style="text-align:center;margin-bottom:30px">
-<img src="./assets/logo.svg" width="500"  />
+<p align="center"><img src="./assets/logo.svg" width="480"/></p>
 </div>
 
 # KITTI-Road-Segmentation-UNET
