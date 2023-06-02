@@ -7,6 +7,47 @@
 <p align="center">
 In this repository I'm trying to do image segmentations on KITTI Road dataset using UNET built from scratch with PyTorch and serve the trained model over HTTP RESTful API for hosting using Docker containers.
 </p>
+## Architecture U-NET:
+![image](https://github.com/hossamemamo/KITTI-Road-Segmentation-UNET/assets/78453559/43e57521-79f3-48f8-8d1e-9dd9d87d220c)
+from : U-Net: Convolutional Networks for Biomedical Image Segmentation
+https://arxiv.org/abs/1505.04597
+
+# LOSS function IOU loss :
+![image](https://github.com/hossamemamo/KITTI-Road-Segmentation-UNET/assets/78453559/a03fbfba-ae26-4648-ac1e-b581b28c2031)
+
+IOU (Intersection over Union) loss is a valuable tool for optimizing segmentation models. It measures the overlap between predicted and ground truth segmentations, encouraging accurate boundary capture. By minimizing the IOU loss during training, models generate more precise segmentations, improving performance in tasks like medical image analysis and object detection.
+
+Note : binary cross-entropy loss is suitable for pixel-wise classification tasks, while IOU loss is beneficial for evaluating and optimizing segmentation models that require accurate boundary capture. and it made more sense to choose a IOU loss over BCE loss
+
+
+
+ 
+```python
+class IoULoss(nn.Module):
+    def __init__(self):
+        super(IoULoss, self).__init__()
+        self.eps = 1e-6
+
+    def forward(self, y_pred, y_true):
+        # Flatten the input tensors
+        y_pred = y_pred.view(-1)        
+        y_true = y_true.view(-1)
+        # Calculate the confusion matrix
+        intersection = (y_pred * y_true).sum()
+        union = y_pred.sum() + y_true.sum() - intersection
+
+        # Calculate the IoU and return the complement as the loss
+        iou = intersection / (union + self.eps)
+        return 1 - iou
+
+```
+## Results :
+![download](https://github.com/hossamemamo/KITTI-Road-Segmentation-UNET/assets/78453559/8b96c367-9b35-43d4-b6a1-ab81db2a164a)
+![image](https://github.com/hossamemamo/KITTI-Road-Segmentation-UNET/assets/78453559/4c56e1e1-ea7e-4068-a1bb-9695263fb111)
+![image](https://github.com/hossamemamo/KITTI-Road-Segmentation-UNET/assets/78453559/e8884131-84ec-40eb-b542-cd3db3ef3dba)
+![image](https://github.com/hossamemamo/KITTI-Road-Segmentation-UNET/assets/78453559/b8f749bd-f6e7-4bb4-b0df-53a831d77af1)
+![image](https://github.com/hossamemamo/KITTI-Road-Segmentation-UNET/assets/78453559/cd2e8c3b-432c-45f1-b1b9-62fb69c568f4)
+![image](https://github.com/hossamemamo/KITTI-Road-Segmentation-UNET/assets/78453559/816cbba6-5dd2-4ec8-add5-55db6ddce3f1)
 
 > Disclaimer: This project is still work-in-progress
 
