@@ -49,6 +49,8 @@ class IoULoss(nn.Module):
 ![image](https://github.com/hossamemamo/KITTI-Road-Segmentation-UNET/assets/78453559/cd2e8c3b-432c-45f1-b1b9-62fb69c568f4)
 ![image](https://github.com/hossamemamo/KITTI-Road-Segmentation-UNET/assets/78453559/816cbba6-5dd2-4ec8-add5-55db6ddce3f1)
 
+
+Support on Kaggle  : https://www.kaggle.com/code/hossamemamo/kitti-road-segmentation-pytorch-unet-from-scratch
 > Disclaimer: This project is still work-in-progress
 
 ## Running Server Locally
@@ -94,9 +96,6 @@ curl -X POST -H "Content-Type: multipart/form-data" -F file="@my_img_file.png" "
 
 ## Documentation Todos
 - [ ] Add documentation for running the server locally without using `Docker`.
-
-## Results
-Check notebook
 
 ## License
 MIT
