@@ -8,7 +8,8 @@
 In this repository I'm trying to do image segmentations on KITTI Road dataset using UNET built from scratch with PyTorch and serve the trained model over HTTP RESTful API for hosting using Docker containers.
 </p>
 ## Architecture U-NET:
-![image](https://github.com/hossamemamo/KITTI-Road-Segmentation-UNET/assets/78453559/43e57521-79f3-48f8-8d1e-9dd9d87d220c)
+![68747470733a2f2f6c6d622e696e666f726d6174696b2e756e692d66726569627572672e64652f70656f706c652f726f6e6e656265722f752d6e65742f752d6e65742d6172636869746563747572652e706e67](https://github.com/hossamemamo/KITTI-Road-Segmentation-UNET/assets/78453559/4e78af66-3c28-417c-8e25-6f78c3bee98b)
+
 from : U-Net: Convolutional Networks for Biomedical Image Segmentation
 https://arxiv.org/abs/1505.04597
 
